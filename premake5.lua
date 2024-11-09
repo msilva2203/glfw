@@ -1,8 +1,8 @@
 project "glfw"
     kind "StaticLib"
     language "C"
-    staticruntime "Off"
-    warnings "Off"
+    staticruntime "on"
+    warnings "off"
 
     targetdir ("bin/" .. outputdir)
     objdir ("obj/" .. outputdir)
@@ -51,7 +51,7 @@ project "glfw"
         }
 
     filter "system:linux"
-        pic "On"
+        pic "on"
         systemversion "latest"
 
         files
@@ -77,15 +77,15 @@ project "glfw"
 
     filter "configurations:Debug"
         runtime "Debug"
-        symbols "On"
+        symbols "on"
 
     filter "configurations:Release"
         runtime "Release"
-        symbols "On"
-        optimize "Speed"
+        symbols "on"
+        optimize "on"
 
     filter "configurations:Distribution"
         runtime "Release"
-        symbols "Off"
-        optimize "Speed"
+        symbols "off"
+        optimize "on"
 
